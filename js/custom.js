@@ -15,7 +15,6 @@ $(function () {
     });
     function newMessage() {
         message = $("#chat-message-val").val();
-        console.log('function called', message);
         if ($.trim(message) == '') {
             return false;
         }
@@ -24,5 +23,16 @@ $(function () {
         $('.message-input input').val(null);
         $('.contact.active .preview').html('<span>You: </span>' + message);
         $(".chat-screen").animate({ scrollTop: $(document).height() }, "fast");
+
+        // to clear input box
+        setTimeout(() => {
+            message = $("#chat-message-val").val("");
+        }, 100);
     };
+    $(window).on('keydown', function (e) {
+        if (e.which == 13) {
+            newMessage();
+            return false;
+        }
+    });
 })
