@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Chat App</title>
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/mediaquery.css" type="text/css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- chat app code starts -->
+    <section class="chat-app-sec">
+      <div class="container-fluid no-gutters">
+        <div class="row no-gutters">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="rooms-tab" data-toggle="tab" href="#rooms" role="tab"
+                  aria-controls="rooms" aria-selected="true">Rooms <span class="notification"></span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="directs-tab" data-toggle="tab" href="#directs" role="tab"
+                  aria-controls="directs" aria-selected="false">Directs</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="rooms" role="tabpanel" aria-labelledby="rooms-tab">
+                <h5>Joined Rooms</h5>
+                <div class="chat-ppl">
+                  <div class="chat-name">
+                    <div class="grp-name">
+                      <span class="icon">
+                        <i class="fa fa-globe" aria-hidden="true"></i>
+                      </span>
+                      r/Learnjavascript
+                    </div>
+                    <div class="click-to-chat grp-active">
+                      <a href="javascript:void(0);" class="javascript">
+                        <span class="user-icon">
+                          <i class="fa fa-users" aria-hidden="true"></i>
+                        </span>
+                        <small>Learn-javascript</small>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="chat-name">
+                    <div class="grp-name">
+                      <span class="icon">
+                        <i class="fa fa-globe green" aria-hidden="true"></i>
+                      </span>
+                      r/ProgrammerHumor
+                    </div>
+                    <div class="click-to-chat">
+                      <a href="javascript:void(0);" class="announcement">
+                        <span class="user-icon">
+                          <i class="fa fa-users" aria-hidden="true"></i>
+                        </span>
+                        <small>Annoucements</small>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="chat-name">
+                    <div class="grp-name">
+                      <span class="icon">
+                        <i class="fa fa-globe blue" aria-hidden="true"></i>
+                      </span>
+                      r/Web_design
+                    </div>
+                    <div class="click-to-chat">
+                      <a href="javascript:void(0);" class="web-design">
+                        <span class="user-icon">
+                          <i class="fa fa-users" aria-hidden="true"></i>
+                        </span>
+                        <small>Web Design</small>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="recommended-rooms">
+                  <h5>Recommended Rooms</h5>
+                  <h6>Also check out <a href="javascript:void();">r/SubChats</a></h6>
+                </div>
+                <div class="recent-chat">
+                  <div class="profile-icon">
+                    <img src="images/js-logo.jpg" class="img-fluid">
+                  </div>
+                  <div class="profile-name">
+                    <h4>r/Community_chat</h4>
+                    <a href="javascript:void(0);" class="javascript">
+                      <span class="user-icon">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                      </span>
+                      Chattit 1
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="directs" role="tabpanel" aria-labelledby="directs-tab">
+                <h4>No chats available</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="chat-box">
+              <div class="chat-header">
+                <div class="chat-info">
+                  <div class="grp-name">
+                    <a href="javascript:void(0);" class="javascript">
+                      <span class="user-icon">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                      </span>
+                      <small>Learn-javascript</small>
+                    </a>
+                    <div class="members">
+                      3105 Members
+                    </div>
+                  </div>
+                </div>
+                <div class="settings">
+                  <a href="javascript:void(0);" class="settings-btn">
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                  </a>
+                  <a href="javascript:void(0);" class="share-btn">
+                    <i class="fa fa-share-square-o" aria-hidden="true"></i>
+                  </a>
+                  <a href="javascript:void(0);" class="minimize-btn">
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </a>
+                  <a href="javascript:void(0);" class="close-btn">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="chat-screen">
+                <div class="recived-msg">
+                  <div class="ppl-profile">
+                    <img src="images/ppl1.jpg" class="img-fluid">
+                    <div class="name">ScienTolog2</div>
+                    <div class="time">03:03</div>
+                  </div>
+                  <div class="msgs">
+                    <p>Use a VPN</p>
+                  </div>
+                </div>
+                <div class="recived-msg">
+                  <div class="ppl-profile">
+                    <img src="images/ppl2.jpg" class="img-fluid">
+                    <div class="name">Lestrenched</div>
+                    <div class="time">10:15</div>
+                  </div>
+                  <div class="msgs">
+                    <p>For a static html site I recommend GitHub pages.</p>
+                  </div>
+                  <div class="msgs">
+                    <p>It's free.</p>
+                  </div>
+                  <div class="msgs">
+                    <p>And Super Easy</p>
+                  </div>
+                </div>
+                <div class="recived-msg">
+                  <div class="ppl-profile">
+                    <img src="images/ppl3.jpg" class="img-fluid">
+                    <div class="name">AOT</div>
+                    <div class="time">15:47</div>
+                  </div>
+                  <div class="msgs">
+                    <p>Good One &#128512</p>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-input">
+                <input type="text" id="chat-message-val" placeholder="Enter Text Here">
+                <div class="select-tool">
+                  <div class="leftside-tool">
+                    <div class="emoji">
+                      <a href="javascript:void(0);">
+                        <img src="images/emojies.png" alt="">
+                      </a>
+                    </div>
+                    <div class="u">
+                      <a href="javascript:void(0);">u/</a>
+                    </div>
+                    <div class="r">
+                      <a href="javascript:void(0);">r/</a>
+                    </div>
+                  </div>
+                  <div class="send" id="message-submit">
+                    <a href="javascript:void(0)" class="send-arrow">
+                      <i class="fa fa-paper-plane"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- chat app code ends -->
+    <!-- include script starts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <!-- include script ends -->
+  </body>
+
+</html>
