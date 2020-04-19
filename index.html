@@ -19,7 +19,7 @@
     <section class="chat-app-sec">
       <div class="container-fluid no-gutters">
         <div class="row no-gutters">
-          <div class="col-lg-3">
+          <div class="col-lg-3 col-md-5" id="chat-listing">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item">
                 <a class="nav-link active" id="rooms-tab" data-toggle="tab" href="#rooms" role="tab"
@@ -102,12 +102,94 @@
                   </div>
                 </div>
               </div>
-              <div class="tab-pane fade" id="directs" role="tabpanel" aria-labelledby="directs-tab">
-                <h4>No chats available</h4>
+              <div class="tab-pane individual-tab fade" id="directs" role="tabpanel" aria-labelledby="directs-tab">
+                <div class="individual-listing">
+                  <div class="listing-items active">
+                    <div class="items-icon">
+                      <img src="images/harveyspecter.png" alt="">
+                    </div>
+                    <div class="items-content">
+                      <h4>Harvey Specter</h4>
+                      <p>You just got LITT up, Mike.</p>
+                    </div>
+                  </div>
+                  <div class="listing-items">
+                    <div class="items-icon">
+                      <img src="images/jessicapearson.png" alt="">
+                    </div>
+                    <div class="items-content">
+                      <h4>Rachel Zane</h4>
+                      <p>Wrong. You take the gun, or you pu adipisicing elit</p>
+                    </div>
+                  </div>
+                  <div class="listing-items">
+                    <div class="items-icon">
+                      <img src="images/louislitt.png" alt="">
+                    </div>
+                    <div class="items-content">
+                      <h4>Louis Litt</h4>
+                      <p>I was thinking that we could have consectetur adipisicing elit</p>
+                    </div>
+                  </div>
+                  <div class="listing-items">
+                    <div class="items-icon">
+                      <img src="images/harveyspecter.png" alt="">
+                    </div>
+                    <div class="items-content">
+                      <h4>Harvey Specter</h4>
+                      <p>You just got LITT up, Mike.</p>
+                    </div>
+                  </div>
+                  <div class="listing-items">
+                    <div class="items-icon">
+                      <img src="images/jessicapearson.png" alt="">
+                    </div>
+                    <div class="items-content">
+                      <h4>Rachel Zane</h4>
+                      <p>Wrong. You take the gun, or you pu adipisicing elit</p>
+                    </div>
+                  </div>
+                  <div class="listing-items">
+                    <div class="items-icon">
+                      <img src="images/louislitt.png" alt="">
+                    </div>
+                    <div class="items-content">
+                      <h4>Louis Litt</h4>
+                      <p>I was thinking that we could have consectetur adipisicing elit</p>
+                    </div>
+                  </div>
+                  <div class="listing-items">
+                    <div class="items-icon">
+                      <img src="images/harveyspecter.png" alt="">
+                    </div>
+                    <div class="items-content">
+                      <h4>Harvey Specter</h4>
+                      <p>You just got LITT up, Mike.</p>
+                    </div>
+                  </div>
+                  <div class="listing-items">
+                    <div class="items-icon">
+                      <img src="images/jessicapearson.png" alt="">
+                    </div>
+                    <div class="items-content">
+                      <h4>Rachel Zane</h4>
+                      <p>Wrong. You take the gun, or you pu adipisicing elit</p>
+                    </div>
+                  </div>
+                  <div class="listing-items">
+                    <div class="items-icon">
+                      <img src="images/louislitt.png" alt="">
+                    </div>
+                    <div class="items-content">
+                      <h4>Louis Litt</h4>
+                      <p>I was thinking that we could have consectetur adipisicing elit</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-9">
+          <div class="col-lg-9 col-md-7 chat-screen-panel" id="group-chat-screen">
             <div class="chat-box">
               <div class="chat-header">
                 <div class="chat-info">
@@ -138,7 +220,7 @@
                   </a>
                 </div>
               </div>
-              <div class="chat-screen">
+              <div class="chat-screen group-chat-screen">
                 <div class="recived-msg">
                   <div class="ppl-profile">
                     <img src="images/ppl1.jpg" class="img-fluid">
@@ -177,7 +259,7 @@
                 </div>
               </div>
               <div class="chat-input">
-                <input type="text" id="chat-message-val" placeholder="Enter Text Here">
+                <input type="text" class="group-chat-message-val" placeholder="Enter Text Here">
                 <div class="select-tool">
                   <div class="leftside-tool">
                     <div class="emoji">
@@ -192,7 +274,98 @@
                       <a href="javascript:void(0);">r/</a>
                     </div>
                   </div>
-                  <div class="send" id="message-submit">
+                  <div class="send message-submit" data-flag="group">
+                    <a href="javascript:void(0)" class="send-arrow">
+                      <i class="fa fa-paper-plane"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9 col-md-7 chat-screen-panel" id="individual-chat-screen">
+            <div class="chat-box">
+              <div class="chat-header">
+                <div class="chat-info">
+                  <div class="grp-name">
+                    <a href="javascript:void(0);" class="javascript">
+                      <span class="user-icon-pic">
+                        <img src="images/harveyspecter.png" alt="">
+                      </span>
+                      <small>Harvey Specter</small>
+                    </a>
+                  </div>
+                </div>
+                <div class="settings">
+                  <a href="javascript:void(0);" class="settings-btn">
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                  </a>
+                  <a href="javascript:void(0);" class="share-btn">
+                    <i class="fa fa-share-square-o" aria-hidden="true"></i>
+                  </a>
+                  <a href="javascript:void(0);" class="minimize-btn">
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </a>
+                  <a href="javascript:void(0);" class="close-btn">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="chat-screen ind-chat-screen">
+                <div class="recived-msg">
+                  <div class="ppl-profile">
+                    <img src="images/ppl1.jpg" class="img-fluid">
+                    <div class="name">ScienTolog2</div>
+                    <div class="time">03:03</div>
+                  </div>
+                  <div class="msgs">
+                    <p>Use a VPN</p>
+                  </div>
+                </div>
+                <div class="recived-msg">
+                  <div class="ppl-profile">
+                    <img src="images/ppl2.jpg" class="img-fluid">
+                    <div class="name">Lestrenched</div>
+                    <div class="time">10:15</div>
+                  </div>
+                  <div class="msgs">
+                    <p>For a static html site I recommend GitHub pages.</p>
+                  </div>
+                  <div class="msgs">
+                    <p>It's free.</p>
+                  </div>
+                  <div class="msgs">
+                    <p>And Super Easy</p>
+                  </div>
+                </div>
+                <div class="recived-msg">
+                  <div class="ppl-profile">
+                    <img src="images/ppl3.jpg" class="img-fluid">
+                    <div class="name">AOT</div>
+                    <div class="time">15:47</div>
+                  </div>
+                  <div class="msgs">
+                    <p>Good One &#128512</p>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-input">
+                <input type="text" class="ind-chat-message-val" placeholder="Enter Text Here">
+                <div class="select-tool">
+                  <div class="leftside-tool">
+                    <div class="emoji">
+                      <a href="javascript:void(0);">
+                        <img src="images/emojies.png" alt="">
+                      </a>
+                    </div>
+                    <div class="u">
+                      <a href="javascript:void(0);">u/</a>
+                    </div>
+                    <div class="r">
+                      <a href="javascript:void(0);">r/</a>
+                    </div>
+                  </div>
+                  <div class="send message-submit" data-flag="ind">
                     <a href="javascript:void(0)" class="send-arrow">
                       <i class="fa fa-paper-plane"></i>
                     </a>

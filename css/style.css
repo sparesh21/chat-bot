@@ -236,15 +236,14 @@ a:hover {
 .nav-item .nav-link {
     padding: 20px;
     position: relative;
+    display: flex;
 }
 .nav-item .nav-link .notification {
     background: #ec5428;
     height: 7px;
     width: 7px;
     border-radius: 50%;
-    position: absolute;
-    right: 40px;
-    top: 20px;
+    margin-left: 10px;
 }
 .nav-item:first-child {
     padding-left: 0;
@@ -255,13 +254,15 @@ a:hover {
 }
 
 .tab-content {
-    padding: 30px 0 30px 30px;
+    padding: 0;
     border-right: 1px solid #343536;
     background: #272728;
     height: calc(100vh - 62px);
     overflow-y: scroll;
 }
-
+.tab-content .tab-pane {
+    padding: 30px 0 30px 30px;
+}
 h5 {
     font-size: 16px;
     line-height: 36px;
@@ -287,7 +288,26 @@ h5 {
     font-size: 16px;
     line-height: 1;
 }
-
+.grp-name a {
+    display: flex;
+    align-items: center;
+}
+.grp-name a .user-icon i {
+    margin-right: 10px;
+}
+.grp-name .user-icon-pic {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #343536;
+    border-radius: 4px;
+    overflow: hidden;
+    display: block;
+    margin-right: 10px;
+}
+.grp-name .user-icon-pic img {
+    width: 100%;
+    height: 100%;
+}
 .click-to-chat {
     padding: 5px 15px;
     margin: 10px 0 10px 15px;
@@ -323,7 +343,7 @@ h5 {
 
 .recommended-rooms {
     margin-top: 15px;
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid #343536;
     padding-bottom: 10px;
 }
 
@@ -411,7 +431,9 @@ h4 {
     font-weight: 700;
     padding: 0 6px;
 }
-
+.settings {
+    margin-right: 20px;
+}
 .ppl-profile img {
     border-radius: 10px;
     width: 40px;
@@ -474,6 +496,7 @@ h4 {
 }
 .recived-msg.sent-message .msgs {
     margin-right: 60px;
+    margin-left: 0;
 }
 .chat-screen {
     padding: 10px;
@@ -531,7 +554,6 @@ input:focus {
 .send-arrow i {
     color: #999;
     font-size: 30px;
-    padding-right: 30px;
 }
 .select-tool {
     display: flex;
@@ -540,5 +562,114 @@ input:focus {
 }
 .select-tool .send {
     padding-left: 20px;
+    padding-right: 20px;
+}
+.individual-listing .listing-items {
+    padding: 16px 14px;
+    border-bottom: 1px solid #343536;
+    display: flex;
+    cursor: pointer;
+}
+.individual-listing .listing-items.active {
+    background: #19191a;
+}
+.individual-listing .listing-items:last-child {
+    border-bottom: 0;
+}
+.individual-listing .listing-items .items-icon {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #343536;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.individual-listing .listing-items .items-icon img {
+    height: 100%;
+    width: 100%;
+}
+.individual-listing .listing-items .items-content {
+    width: calc(100% - 50px);
+    padding-left: 20px;
+}
+.individual-listing .listing-items h4 {
+    font-size: 18px;
+}
+.individual-listing .listing-items p {
+    font-size: 14px;
+    margin-top: 6px;
+    color: #d8dadc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4;
+}
+.tab-content .tab-pane.individual-tab {
+    padding: 0;
+}
+.chat-screen-panel {
+    display: none;
+}
+#group-chat-screen {
+    display: block;
 }
 /*chat app css ends*/
+/* responsive code */
+@media screen and (max-width: 767px) {
+    .chat-screen-panel {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9;
+        background: #19191a;
+        height: 100%;
+    }
+    .tab-content {
+        height: auto;
+        overflow-y: auto;
+    }
+    .nav-tabs {
+        padding: 0;
+    }
+    .tab-content .tab-pane {
+        padding: 10px 20px 30px 20px;
+    }
+    .nav-item .nav-link {
+        padding: 16px;
+    }
+    .click-to-chat a {
+        font-size: 18px;
+    }
+    .chat-input {
+        padding-bottom: 10px;
+        padding-left: 0;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    .leftside-tool a {
+        padding: 0px 10px;
+    }
+    #chat-listing {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background: #272728;
+    }
+    .msgs p {
+        font-size: 14px;
+    }
+    .recived-msg {
+        max-width: 80%;
+    }
+    .recived-msg.sent-message {
+        max-width: 80%;
+    }
+    .send-arrow i {
+        font-size: 24px;
+    }
+    .settings a {
+        font-size: 18px;
+    }
+}
