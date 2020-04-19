@@ -1,7 +1,7 @@
-$(function() {
+$(function () {
     winWidth = $(window).width();
 
-    $('.click-to-chat').on('click', function() {
+    $('.click-to-chat').on('click', function () {
         $('.click-to-chat').removeClass('grp-active');
         $(this).addClass('grp-active');
         var getTitle = $(this).find('small').text();
@@ -10,7 +10,7 @@ $(function() {
             $('#group-chat-screen').fadeIn();
         }
     });
-    $('.individual-listing .listing-items').on('click', function() {
+    $('.individual-listing .listing-items').on('click', function () {
         $('.individual-listing .listing-items').removeClass('active');
         $(this).addClass('active');
         var getTitle = $(this).find('h4').text();
@@ -22,7 +22,7 @@ $(function() {
         }
     });
     if (winWidth > 767) {
-        $('.nav-tabs .nav-link').on('click', function() {
+        $('.nav-tabs .nav-link').on('click', function () {
             var currentTab = $(this).attr('href');
             if (currentTab === "#rooms") {
                 $('#individual-chat-screen').hide();
@@ -36,7 +36,7 @@ $(function() {
     }
     /*==== for chatting with new message ====*/
     if (winWidth <= 767) {
-        $('.close-btn').on('click', function() {
+        $('.close-btn').on('click', function () {
             $('.chat-screen-panel').fadeOut();
         })
     }
@@ -49,8 +49,8 @@ $(function() {
 
 
     //message chatting
-    $('.message-submit').on('click', function() {
-        setFlag = $(this).data('flag');
+    $('.message-submit').on('click', function () {
+        var setFlag = $(this).data('flag');
         newMessage(setFlag)
     });
 
@@ -59,8 +59,14 @@ $(function() {
         if ($.trim(message) == '') {
             return false;
         }
-        console.log(message);
-        $('<div class="recived-msg sent-message"> <div class="ppl-profile"> <img src="images/user.png" class="img-fluid"> <div class="name">You</div> <div class="time">15:47</div> </div> <div class="msgs"> <p>' + message + '</p> </div> </div>').appendTo($('.' + flag + '-chat-screen'));
+        currentDate = new Date()
+        var cH = currentDate.getHours().toString();
+        var cM = currentDate.getMinutes().toString();
+
+        currentTime = cH + ':' + cM;
+
+
+        $('<div class="recived-msg sent-message"> <div class="ppl-profile"><div class="name">You</div> <div class="time">' + currentTime + '</div> </div> <div class="msgs"> <p>' + message + '</p> </div> </div>').appendTo($('.' + flag + '-chat-screen'));
         $('.message-input input').val(null);
         $('.contact.active .preview').html('<span>You: </span>' + message);
         $('.' + flag + '-chat-screen').animate({
@@ -72,9 +78,10 @@ $(function() {
             message = $('.' + flag + '-chat-message-val').val("");
         }, 100);
     };
-    $(window).on('keydown', function(e) {
+    $(window).on('keydown', function (e, flag) {
         if (e.which == 13) {
-            newMessage();
+            newMessage('ind');
+            newMessage('group');
             return false;
         }
     });
