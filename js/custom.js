@@ -1,7 +1,7 @@
-$(function () {
+$(function() {
     winWidth = $(window).width();
 
-    $('.click-to-chat').on('click', function () {
+    $('.click-to-chat').on('click', function() {
         $('.click-to-chat').removeClass('grp-active');
         $(this).addClass('grp-active');
         var getTitle = $(this).find('small').text();
@@ -10,7 +10,7 @@ $(function () {
             $('#group-chat-screen').fadeIn();
         }
     });
-    $('.individual-listing .listing-items').on('click', function () {
+    $('.individual-listing .listing-items').on('click', function() {
         $('.individual-listing .listing-items').removeClass('active');
         $(this).addClass('active');
         var getTitle = $(this).find('h4').text();
@@ -22,7 +22,7 @@ $(function () {
         }
     });
     if (winWidth > 767) {
-        $('.nav-tabs .nav-link').on('click', function () {
+        $('.nav-tabs .nav-link').on('click', function() {
             var currentTab = $(this).attr('href');
             if (currentTab === "#rooms") {
                 $('#individual-chat-screen').hide();
@@ -36,7 +36,7 @@ $(function () {
     }
     /*==== for chatting with new message ====*/
     if (winWidth <= 767) {
-        $('.close-btn').on('click', function () {
+        $('.close-btn').on('click', function() {
             $('.chat-screen-panel').fadeOut();
         })
     }
@@ -49,7 +49,7 @@ $(function () {
 
 
     //message chatting
-    $('.message-submit').on('click', function () {
+    $('.message-submit').on('click', function() {
         setFlag = $(this).data('flag');
         newMessage(setFlag)
     });
@@ -63,14 +63,16 @@ $(function () {
         $('<div class="recived-msg sent-message"> <div class="ppl-profile"> <img src="images/user.png" class="img-fluid"> <div class="name">You</div> <div class="time">15:47</div> </div> <div class="msgs"> <p>' + message + '</p> </div> </div>').appendTo($('.' + flag + '-chat-screen'));
         $('.message-input input').val(null);
         $('.contact.active .preview').html('<span>You: </span>' + message);
-        $('.' + flag + '-chat-screen').animate({ scrollTop: $(document).height() }, "fast");
+        $('.' + flag + '-chat-screen').animate({
+            scrollTop: $(document).height()
+        }, "fast");
 
         // to clear input box
         setTimeout(() => {
             message = $('.' + flag + '-chat-message-val').val("");
         }, 100);
     };
-    $(window).on('keydown', function (e) {
+    $(window).on('keydown', function(e) {
         if (e.which == 13) {
             newMessage();
             return false;
