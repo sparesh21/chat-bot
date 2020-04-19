@@ -615,6 +615,9 @@ input:focus {
 /*chat app css ends*/
 /* responsive code */
 @media screen and (max-width: 767px) {
+    #group-chat-screen {
+        display: none;
+    }
     .chat-screen-panel {
         display: none;
         position: fixed;
